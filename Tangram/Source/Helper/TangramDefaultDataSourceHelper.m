@@ -216,12 +216,12 @@
     layout = [TangramLayoutParseHelper layoutConfigByOriginLayout:layout withDict:dict];
     //解析HeaderModel & FooterModel
     if ([dict tgrm_dictionaryForKey:@"header"] != nil && [layout respondsToSelector:@selector(setHeaderItemModel:)]) {
-        TangramDefaultItemModel *headerModel = [TangramDefaultDataSourceHelper modelWithDictionary:[dict tgrm_dictionaryForKey:@"header"]];
+        TangramDefaultItemModel *headerModel = (TangramDefaultItemModel *) [TangramDefaultDataSourceHelper modelWithDictionary:[dict tgrm_dictionaryForKey:@"header"]];
         headerModel.display = @"block";
         layout.headerItemModel = headerModel;
     }
     if ([dict tgrm_dictionaryForKey:@"footer"] != nil && [layout respondsToSelector:@selector(setHeaderItemModel:)]) {
-        TangramDefaultItemModel *footerModel = [TangramDefaultDataSourceHelper modelWithDictionary:[dict tgrm_dictionaryForKey:@"footer"]];
+        TangramDefaultItemModel *footerModel = (TangramDefaultItemModel *) [TangramDefaultDataSourceHelper modelWithDictionary:[dict tgrm_dictionaryForKey:@"footer"]];
         footerModel.display = @"block";
         layout.footerItemModel = footerModel;
     }
